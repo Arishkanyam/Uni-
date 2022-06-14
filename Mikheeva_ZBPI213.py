@@ -18,8 +18,6 @@ def fact(x):
       return 1
     else:
         return (x* fact(x-1))
-x=int(input('Введите число: '))
-print('Факториал =', fact(x))
 
 """#2
  Создайте функцию ```filter_even```, которая принимает на вход список целых чисел,  и фильтруя, возвращает список, содержащий только четные числа. Используйте ```filter``` для фильтрации и  ```lambda```.
@@ -28,8 +26,6 @@ print('Факториал =', fact(x))
 def filter_even(li):
   even_li= list(filter(lambda x: x%2==0,li))
   return even_li
-li=[1,5,756,34,2,35,76,87,8]
-print('Even list:', filter_even(li))
 
 """#3
 Напишите функцию ```square``` ,которая принимает на вход список целых чисел и возвращает список с возведенными в квадрат элементами. Используйте ```map```.
@@ -38,8 +34,7 @@ print('Even list:', filter_even(li))
 def square(li):
   squares_li = list(map(lambda x: x**2,li))
   return squares_li
-li=[1,2,3,4,5,7,8,9,6,10]
-print('Квадраты чисел:', square(li))
+
 
 """#4
 Напишите функцию бинарного поиска ```bin_search```, которая принимает на вход отсортированный список и элемент. Функция должна возвращать индекс искомого элемента в списке. 
@@ -77,10 +72,6 @@ def bin_search(li, element):
             return mid
     return -1
 
-li, element=[2,5,7,9,11,17,222],11
-print(bin_search(li,element))
-li, element=[2,5,7,9,11,17,222],12
-print(bin_search(li,element))
 
 """#5
 Напишите функцию ```is_palindrome``` определяющую,является ли строка палиндромом.
@@ -130,8 +121,6 @@ def is_palindrome(string):
             break
     return palindrome
 
-print(is_palindrome("Madam, I'm Adam"))
-print(is_palindrome('А роза упала на лапу Азора'))
 
 """# 6
 Написать функцию ```calculate```, которая принимает на вход текстовый файл содержащий строки следующего формата:
@@ -180,7 +169,6 @@ print(is_palindrome('А роза упала на лапу Азора'))
 
 """
 
-path2file='test_input_file_1.txt'
 def calculate(path2file):
     with open (path2file, 'r', encoding='utf-8') as f:
         out=[]
@@ -193,7 +181,6 @@ def calculate(path2file):
         out=', '.join(str(x) for x in out)
         return(out)
 
-print(calculate(path2file))
 
 """# 7
 Написать функцию ```substring_slice```,которой на вход поступают два текстовых файла.
@@ -242,8 +229,7 @@ vrNOQoxUbyiZombbLaYqBHvydPJlvdspwwpgeLNlHMVYrZvPsQkcQgP KdYYlKKRrYGNWEXTYXOpQqrd
 [Пример выходной строки для двух файлов выше содержится в этом файле.](https://drive.google.com/file/d/11Lsq1DV8iuMsZ_LPuTj50w5Htq1-95Ys/view?usp=sharing)
 """
 
-path2file_1 = 'test_import_file_2_1.txt'
-path2file_2 = 'test_import_file_2_2.txt'
+
 def substring_slice(path2file_1,path2file_2):
      with open(path2file_1) as f1, open(path2file_2) as f2:
           with open("3.txt", "w")as f3:
@@ -262,7 +248,7 @@ def substring_slice(path2file_1,path2file_2):
                res.append(changed)
           res=' '.join(str(x) for x in res)
           return(res)
-print(substring_slice(path2file_1,path2file_2))
+
 
 """#8
 
@@ -301,9 +287,6 @@ def decode_ch(sting_of_elements):
         encodedString += periodic_table[el]
     return encodedString
 
-sting_of_elements = input('Enter string: ')
-encodedString = decode_ch(sting_of_elements)
-print('Decoded string: ', encodedString)
 
 """#9
 
@@ -365,12 +348,6 @@ class Student:
 
 
 
-
-ob1= Student('Ben','Aren')
-ob2= Student('Tom', 'Adams', [5,5,5])
-print(ob2.is_otlichnik())
-print(ob1.__add__(ob2))
-
 """#10
 
 Определите  класс исключений ```MyError```,
@@ -385,13 +362,4 @@ class MyError(Exception):
 
      def __init__(self, msg):
           self.msg = msg
-
-'''error example'''
-def division_by_zero(x,y):
-     if y==0:
-         raise MyError('Division be zero!!!!')
-     ans= 0
-     while y!=0:
-          ans= x/y
-     return ans
 
