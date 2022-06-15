@@ -168,18 +168,16 @@ def is_palindrome(string):
 
 
 """
-
 def calculate(path2file):
+    action = {'+': lambda x,y:x+y, '-': lambda x,y:x-y, '*': lambda x,y:x*y, '//': lambda x,y:x//y, '%': lambda x,y:x%y, '**': lambda x,y:x**y,}
     with open (path2file, 'r', encoding='utf-8') as f:
-        out=[]
-        for line in f:
-            lst=line.split()
-            lst[1],lst[0] = lst[0],lst[1]
-            lst=''.join(lst)
-            res=eval(lst)
-            out.append(res)
-        out=', '.join(str(x) for x in out)
-        return(out)
+        lines = f.readlines()
+        out = []
+        for i in range(len(lines)):
+            lst = lines[i].split()
+            out.append(action[lst[0]](int(lst[1]), int(lst[2])))
+            out = reduce(lambda x, y: str(x) + ',' + str(y), out)
+        return out
 
 
 """# 7
