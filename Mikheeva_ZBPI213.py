@@ -168,6 +168,7 @@ def is_palindrome(string):
 
 
 """
+from functools import reduce
 def calculate(path2file):
     operations = {
         '+': lambda x, y: x + y,
