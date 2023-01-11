@@ -1,10 +1,10 @@
-import tkinter as tk
+from tkinter import *
 
 
-root = tk.Tk()   
+root = Tk()   
 width = 520
 height = 370
-c = tk.Canvas(root, width=width, height=height, bg='brown3')
+c = Canvas(root, width=width, height=height, bg='brown3')
 c.pack()
 c.create_rectangle(0, height//2, width+2, height+2, fill='brown4')
 
