@@ -1,7 +1,7 @@
 from tkinter import *
 import math
 
-# Параметры
+
 angleBetween = 22 # Угол между ветками
 lenFactor = 0.751 # Множитель длины вложенных веток
 startLength = 100 # Начальная длина веток
