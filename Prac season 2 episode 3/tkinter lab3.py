@@ -11,7 +11,7 @@ c.create_rectangle(0, height//2, width+2, height+2, fill='brown4')
 
 class Ball:
 
-    def __init__(self, c, x1, y1, x2, y2, radius, mass):   #color="navajowhite2"
+    def __init__(self, c, x1, y1, x2, y2, radius, mass): 
 
         self.x1 = x1
         self.y1 = y1
